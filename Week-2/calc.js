@@ -11,6 +11,10 @@ const divisionFunction = (inputOne, inputTwo) => {
     return inputOne / inputTwo;
 }
 
+function divisionFunction(inputOne, inputTwo) {
+    return inputOne / inputTwo;
+}
+
 const myCalculatorProgram = () => {
     // Retrieve HTML elements by their IDs
     const numberOneElement = document.getElementById('one');

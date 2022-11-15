@@ -20,13 +20,13 @@ const fruitsArray = ['Mango', 'Apple', 'Banana', 'Watermelon', 'Grape'];
 
 // 6. Loops
 // Method 1
-// fruitsArray.forEach((item, index) => {
-//     if (item == 'Apple') {
-//         console.log('I don\'t like apples');
-//     } else {
-//         console.log('I am eating a',item);
-//     }
-// });
+fruitsArray.forEach((item, index) => {
+    if (item == 'Apple') {
+        console.log('I don\'t like apples');
+    } else {
+        console.log('I am eating a',item);
+    }
+});
 // Method 2
 // fruitsArray.map((abc, index) => {
 //     console.log(abc,'is index',index);

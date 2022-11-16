@@ -36,6 +36,8 @@ $(document).ready(() => {
     $('button#first').click(() => {
         $('body').addClass('styler');
         $('p#second').removeClass('styler');
+        // NB:- This makes sense if you're applying a single change
+        $('p#second').css('font-size','30cm');
         // $(this).hide();
     });
 

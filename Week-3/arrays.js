@@ -1,7 +1,6 @@
 // Arrays
 
 // 1. Definition
-const fruitsArray = ['Mango', 'Apple', 'Banana', 'Watermelon', 'Grape'];
 
 // 2. Add items to the array
 // fruitsArray.push('Kiwi');
@@ -28,19 +27,37 @@ const fruitsArray = ['Mango', 'Apple', 'Banana', 'Watermelon', 'Grape'];
 //     }
 // });
 // Method 2
-// fruitsArray.map((abc, index) => {
-//     console.log(abc,'is index',index);
+const fruitsArray = ['Mango', 'Apple', 'Banana', 'Watermelon', 'Grape'];
+// fruitsArray.map(function (value, index) {
+//     console.log(value, index);
+// })
+// fruitsArray.map((value) => {
+//     console.log(value);
 // });
-// Method 3
-for (let index = 0; index < fruitsArray.length; index++) {
-    const element = fruitsArray[index];
-    console.log(element,'is in position', index);
-}
 
-// Length vs Index
-const myWord = 'Fruits';
-for (let index = 0; index < myWord.length; index++) {
-    const singleLetter = myWord[index];
-    console.log(singleLetter)
-}
-console.log(myWord.length);
+const newSubArray = fruitsArray.slice(1,5);
+console.log(newSubArray, fruitsArray);
+
+const splicedArray = fruitsArray.splice(1,2);
+console.log(splicedArray, fruitsArray);
+
+// Functions
+// function myFunc() {
+
+// }
+// const myFunc = () => {}
+
+
+// // Method 3
+// for (let index = 0; index < fruitsArray.length; index++) {
+//     const element = fruitsArray[index];
+//     console.log(element,'is in position', index);
+// }
+
+// // Length vs Index
+// const myWord = 'Fruits';
+// for (let index = 0; index < myWord.length; index++) {
+//     const singleLetter = myWord[index];
+//     console.log(singleLetter)
+// }
+// console.log(myWord.length);

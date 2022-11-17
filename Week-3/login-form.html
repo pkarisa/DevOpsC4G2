@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+
+    <label for="emailBox">Email</label>
+    <input type="email" id="emailBox">
+
+    <label for="passwordBox">Password</label>
+    <input type="password" id="passwordBox">
+
+    <button id="loginButton">LOGIN</button>
+
+    <br>
+    <p id="loginResult">SOME TEXT HERE</p>
+
+    <!-- Link to Jquery -->
+    <!-- NB: Place JQuery at the bottom of the body tag -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.1/jquery.min.js"></script>
+    <script>
+        // Capture input from Frontend (HTML)
+        $(document).ready((event) => {
+            $('button#loginButton').click(() => {
+                const emailValue = $('input#emailBox').val();
+                const passwordValue = $('input#passwordBox').val();
+
+                // Perform validation for input fields
+                let message;
+                if (emailValue == '' || passwordValue == '') message = 'Please provide email and/or password';
+                else {
+                    if (String(emailValue).length < 3 || String(passwordValue).length < 3) message = 'Please provide more than 3 characters for email and/or password';
+                    else {
+                        if (!String(emailValue).includes('@')) message = 'Please provide a valid email';
+                        else message = 'Logged in successfuly as ' + emailValue;
+                    }
+                }
+                $('p#loginResult').text(message);
+                // alert(message);
+            })
+
+            event.preventDefault();
+        });
+    </script>
+</body>
+
+</html>

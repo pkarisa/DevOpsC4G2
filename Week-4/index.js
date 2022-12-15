@@ -50,11 +50,9 @@ const server = http.createServer(function (request, response) {
 
         let chosenHandler = typeof (router[trimmedPath]) !== 'undefined' ? router[trimmedPath] : handlers.notFound;
 
-        const data = {
-            method, requestUrl, trimmedPath, query, headers, payload,
-        };
+        const data = { method, requestUrl, trimmedPath, query, headers, payload };
 
-        chosenHandler(data, function (statusCode, payload) {
+        chosenHandler(data, function (statusCode, payloadData) {
             // if (typeof(statusCode) == 'number') {
             //     statusCode = statusCode;
             // } else {
@@ -62,14 +60,13 @@ const server = http.createServer(function (request, response) {
             // }
             statusCode = typeof (statusCode) == 'number' ? statusCode : 200;
 
-            payload = typeof (payload) == 'object' ? payload : {};
-
             // Convert to string
-            const payloadAsAString = JSON.stringify(payload);
+            const payloadAsAString = JSON.stringify(payloadData);
 
+            response.setHeader('Content-Type', 'text/html');
             response.writeHead(statusCode);
-            response.end(payloadAsAString);
-        })
+            response.end(payloadData);
+        });
     });
 });
 

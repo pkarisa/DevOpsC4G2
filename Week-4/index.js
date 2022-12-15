@@ -7,7 +7,6 @@ const fs = require('fs');
 // Handlers
 let handlers = {};
 
-// 
 const port = process.env.PORT || 3000;
 
 handlers.home = function (data, callback) {

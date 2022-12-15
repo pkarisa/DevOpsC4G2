@@ -11,7 +11,6 @@ const port = process.env.PORT || 3000;
 
 handlers.home = function (data, callback) {
     const fileData = fs.readFileSync('Week-4/public/home.html');
-    // TODO: Deploy web app -> Heroku
     callback(200, fileData.toString());
 };
 handlers.about = function (data, callback) {

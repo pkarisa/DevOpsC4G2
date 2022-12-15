@@ -17,6 +17,7 @@ handlers.about = function (data, callback) {
     callback(200);
 };
 handlers.notFound = function (data, callback) {
+    console.log('Someone is here');
     const fileData = fs.readFileSync('Week-4/public/not-found.html');
     callback(404, fileData.toString());
 };

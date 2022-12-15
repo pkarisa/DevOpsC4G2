@@ -7,7 +7,6 @@ const StringDecoder = require('string_decoder').StringDecoder;
 let handlers = {};
 
 handlers.home = function (data, callback) {
-    console.log(data);
     // TODO: Respond with the home html page;
     // TODO: Deploy web app -> Heroku
     callback(200, '<p>This is the home page</p>');

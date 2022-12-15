@@ -2,20 +2,24 @@
 const http = require('http');
 const url = require('url');
 const StringDecoder = require('string_decoder').StringDecoder;
+const fs = require('fs');
 
 // Handlers
 let handlers = {};
 
+const port = process.env.PORT || 3000;
+
 handlers.home = function (data, callback) {
-    // TODO: Respond with the home html page;
+    const fileData = fs.readFileSync('Week-4/public/home.html');
     // TODO: Deploy web app -> Heroku
-    callback(200, '<p>This is the home page</p>');
+    callback(200, fileData.toString());
 };
 handlers.about = function (data, callback) {
     callback(200);
 };
 handlers.notFound = function (data, callback) {
-    callback(404);
+    const fileData = fs.readFileSync('Week-4/public/not-found.html');
+    callback(404, fileData.toString());
 };
 
 // Router
@@ -70,6 +74,6 @@ const server = http.createServer(function (request, response) {
 });
 
 // NB: Use port number ranges between 3000-5000
-server.listen(3000, () => {
+server.listen(port, () => {
     console.log('The server is running');
 });

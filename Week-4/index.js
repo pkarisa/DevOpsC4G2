@@ -2,31 +2,10 @@
 const http = require('http');
 const url = require('url');
 const StringDecoder = require('string_decoder').StringDecoder;
-const fs = require('fs');
-
-// Handlers
-let handlers = {};
+const router = require('./router');
+const handlers = require('./handlers');
 
 const port = process.env.PORT || 3000;
-
-handlers.home = function (data, callback) {
-    const fileData = fs.readFileSync('Week-4/public/home.html');
-    callback(200, fileData.toString());
-};
-handlers.about = function (data, callback) {
-    callback(200);
-};
-handlers.notFound = function (data, callback) {
-    console.log('Someone is here');
-    const fileData = fs.readFileSync('Week-4/public/not-found.html');
-    callback(404, fileData.toString());
-};
-
-// Router
-const router = {
-    home: handlers.home,
-    about: handlers.about,
-};
 
 // Create Server
 const server = http.createServer(function (request, response) {

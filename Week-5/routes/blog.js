@@ -30,6 +30,8 @@ router.get('/', async function (req, res) {
 router.patch('/:id', async function (req, res) {
     const id = req.params.id;
     const updatedData = req.body;
+    console.log(id)
+    console.log(updatedData)
 
     try {
         const dataUpdate = await blogModel.findByIdAndUpdate(id, updatedData, { new: true });

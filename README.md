@@ -7,3 +7,6 @@ Tech Stack - CSS and HTML
 
 Setup
 Clone the repo, navigate to the directory on file explorer and double click a .HTML file to open in a browser
+
+This is a contribution request.
+Please consider
